@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>Login</title>
+	<script type="text/javascript">
+		
+		function loginValidate() {
+			var name = document.loginform.name.value;
+			var pass = document.loginform.password.value; 
+			if (name=="") {
+				alert("Username cannot be empty!");
+				return false;
+			}
+
+			if (pass=="") {
+				alert("Password cannot be empty!");
+				return false;
+			}
+			document.loginform.method="POST";
+			document.loginform.action="Login";
+			document.loginform.submit();
+
+		}
+
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-5">
+				<br>
+				<form name="loginform" method="POST" onsubmit=loginValidate()>
+					<h1 class="text-center">LOGIN HERE</h1><br><br>
+					<h3 class="text-center">Existing user</h3><br>
+					<input type="text" class="form-control" name="name" placeholder="User name">
+					<input type="password" class="form-control" name="password" placeholder="Password">
+					<input type="submit" class="btn btn-danger" value="Login"><br>
+					<hr>
+					<h3 class="text-center">Not a member yet?</h3>
+					<a href="Register.jsp"><div class="btn btn-info">SIGN UP</div></a>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+
+</body>
+</html>
